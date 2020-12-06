@@ -11,7 +11,7 @@ const phaser = path.join(__dirname, 'node_modules/phaser/dist/phaser.js');
 app.get('/phaser*.js', (req, res) => {
     res.sendFile(phaser);
 });
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/assets', express.static(path.join(__dirname, 'docs/assets')));
 app.use(express.static(rootpath))
 
 app.listen(port, () => {

@@ -1,0 +1,13 @@
+.label {
+    font-weight: bold;
+}
+
+.trivia {
+    background-color: lightgreen;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.trivia .answer {
+    font-weight: bold;
+    color: maroon;
+}

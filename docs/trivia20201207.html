@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Science Trivia for Monday</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/spoiler.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            spoilerAlert('.spoiler', {max: 8, partial: 6, hintText: 'Click to reveal'});
+        });
+    </script>
+</head>
+<body class="trivia">
+<ol>
+    <li>
+        <i>The Imitation Game</i> is a movie starring Benedict Cumberbatch about what British computer scientist?
+        The name comes from this man's idea of testing if a computer program has artificial intelligence by
+        seeing if it can imitate a person in a conversation.
+
+        <div class="spoiler">
+            <p><span class="label">Answer:</span> <span class="answer">Alan Turing</span></p>
+
+            <p class="details">Alan Turing is widely considered the father of computer science. His work breaking
+                codes during World War II probably saved many lives.</p>
+        </div>
+    </li>
+    <li>
+        What computer language that was invented in 1967 allows you to draw pictures by giving commands like
+        <code>FORWARD 50</code> and <code>RIGHT 90</code> to a pen-carrying turtle?
+
+        <div class="spoiler">
+            <p><span class="label">Answer:</span> <span class="answer">LOGO</span></p>
+
+            <p class="details">LOGO was designed by Wally Feurzeig, Seymour Papert, and Cynthia Solomon. Early
+            turtles were often robots that rolled on the floor and drew on paper, but now most versions of LOGO
+            use an on-screen turtle.</p>
+        </div>
+    </li>
+</ol>
+</body>
+</html>
