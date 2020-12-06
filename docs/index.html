@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CSEDweek 2020</title>
+    <title>CSEDWeek 2020</title>
     <script src="js/spoiler.js"></script>
     <script>
-        spoilerAlert('.spoiler', {partial: 10, max: 10, hintText: 'Click to reveal'});
+        document.addEventListener("DOMContentLoaded", () => {
+            spoilerAlert('.spoiler', {max: 8, partial: 6, hintText: 'Click to reveal'});
+        });
     </script>
 </head>
 <body>
