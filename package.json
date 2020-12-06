@@ -1,0 +1,15 @@
+{
+  "name": "csedweek2020",
+  "version": "1.0.0",
+  "description": "Code and text for lessons for Computer Science Education Week 2020",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "phaser": "^3.24.1"
+  }
+}
