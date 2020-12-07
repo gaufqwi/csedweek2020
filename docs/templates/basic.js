@@ -65,7 +65,6 @@ function create () {
  * waiting for user input and responding in ways that reflect the game rules.
  */
 function update () {
-
 }
 
 /** Helper functions

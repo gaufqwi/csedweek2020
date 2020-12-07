@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CSED Week 2020 - Monday</title>
+
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="reveal.css">
+		<link rel="stylesheet" href="theme/solarized.css" id="theme">
+		<style>
+			.container {
+				display: flex;
+				width: 100%;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-around;
+				height: 55vh;
+				font-size: 85%;
+			}
+			img {
+				object-fit: contain;
+				margin: 0 auto;
+			}
+			section .col-1 {
+				display: inline-block;
+				margin: 0 48px;
+				/*border: 1px solid black;*/
+				width: 40%;
+				text-align: left;
+			}
+			section .col-2 {
+				display: inline-block;
+				margin: 0 48px;
+				/*border: 1px solid black;*/
+				width: 48%;
+				text-align: left;
+			}
+			section .col-3 {
+				display: inline-block;
+				margin: 0 48px;
+				/*border: 1px solid black;*/
+				width: 56%;
+				text-align: left;
+			}
+			/*.col-1 ul, .col-2 ul, .col-3 ul {*/
+			/*	margin-top: 2em;*/
+			/*}*/
+		</style>
+
+		<!-- Theme used for syntax highlighted code -->
+<!--		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">-->
+	</head>
+	<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Home Page</h1>
+				<a href="https://gaufqwi.github.io/csedweek2020/">https://gaufqwi.github.io/csedweek2020/</a>
+			</section>
+			<section>
+				<h1>Phaser</h1>
+				<a href="https://phaser.io">https://phaser.io</a>
+			</section>
+			<section>
+				<h1>Art by Kenney</h1>
+				<a href="https://kenney.nl/">https://kenney.nl/</a>
+			</section>
+			<section>
+				<h1>Phaser Sandbox</h1>
+				<a href="https://labs.phaser.io/edit.html">https://labs.phaser.io/edit.html</a>
+			</section>
+			<section>
+				<div class="container">
+					<img src="images/flowchart-plain.png">
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<div class="col-1">
+						<img src="images/flowchart-config.png">
+					</div>
+					<div class="col-3">
+						This is where you set most of the options for your game and use them to create the Phaser game
+						object that basically runs the whole game
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<div class="col-1">
+						<img src="images/flowchart-preload.png">
+					</div>
+					<div class="col-3">
+						<code>preload()</code> runs first. It is responsible for downloading the graphics and sounds our
+						game needs
+						from the server.
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<div class="col-1">
+						<img src="images/flowchart-create.png">
+					</div>
+					<div class="col-3">
+						<code>create()</code> is responsible for setting up the game. It needs to create the objects in
+						the game
+						world and assign them to variables. It often also needs to set up other variables (like a score
+						or number of lives remaining).
+
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<div class="col-1">
+						<img src="images/flowchart-update.png">
+					</div>
+					<div class="col-3">
+						<code>update()</code> is the game's "main loop". It runs many times a second and is responsible
+						for
+						waiting for user input and responding in ways that reflect the game rules.
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<img src="images/coordsys.png">
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<img src="images/tiles-coords.png">
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<img src="images/tiles-plain.png">
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<img src="images/tiles-hlabel.png">
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<img src="images/tiles-vlabel.png">
+				</div>
+			</section>
+		</div>
+	</div>
+
+		<script src="js/reveal.js"></script>
+<!--		<script src="plugin/highlight/highlight.js"></script>-->
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				controls: false,
+				progress: false,
+				plugins: [ ]
+			});
+		</script>
+	</body>
+</html>

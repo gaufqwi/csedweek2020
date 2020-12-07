@@ -4,39 +4,78 @@
     <meta charset="UTF-8">
     <title>Computer Science Trivia for Monday</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/monokai.css">
     <script src="js/spoiler.js"></script>
+    <script src="js/highlight.pack.js"></script>
     <script>
+        hljs.initHighlightingOnLoad();
         document.addEventListener("DOMContentLoaded", () => {
-            spoilerAlert('.spoiler', {max: 8, partial: 6, hintText: 'Click to reveal'});
+            spoilerAlert('.spoiler', {max: 13, partial: 11, hintText: 'Click to reveal'});
         });
     </script>
 </head>
 <body class="trivia">
-<ol>
-    <li>
-        <i>The Imitation Game</i> is a movie starring Benedict Cumberbatch about what British computer scientist?
-        The name comes from this man's idea of testing if a computer program has artificial intelligence by
-        seeing if it can imitate a person in a conversation.
+<div class="centerer">
+    <h1>Monday Trivia</h1>
+    <p>Give these trivia questions a try. Click the blurry text to see the answers.</p>
+    <ol>
+        <li>
+            <i>The Imitation Game</i> is a movie starring Benedict Cumberbatch about what British computer scientist?
+            The name comes from this man's idea of testing if a computer program has artificial intelligence by
+            seeing if it can imitate a person in a conversation.
 
-        <div class="spoiler">
-            <p><span class="label">Answer:</span> <span class="answer">Alan Turing</span></p>
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Alan Turing</span></p>
 
-            <p class="details">Alan Turing is widely considered the father of computer science. His work breaking
-                codes during World War II probably saved many lives.</p>
-        </div>
-    </li>
-    <li>
-        What computer language that was invented in 1967 allows you to draw pictures by giving commands like
-        <code>FORWARD 50</code> and <code>RIGHT 90</code> to a pen-carrying turtle?
+                <p class="details">Alan Turing is widely considered the father of computer science. His work breaking
+                    codes during World War II probably saved many lives. Turing was mistreated during his life because
+                    he was gay but in recent years the government of the United Kingdom has apologized, and in 2021 he
+                    will be honored by his picture appearing on the new £50 note.</p>
+            </div>
+        </li>
+        <li>
+            What computer language that was invented in 1967 allows you to draw pictures by giving commands like
+            <code>FORWARD 50</code> and <code>RIGHT 90</code> to a pen-carrying turtle?
 
-        <div class="spoiler">
-            <p><span class="label">Answer:</span> <span class="answer">LOGO</span></p>
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">LOGO</span></p>
 
-            <p class="details">LOGO was designed by Wally Feurzeig, Seymour Papert, and Cynthia Solomon. Early
-            turtles were often robots that rolled on the floor and drew on paper, but now most versions of LOGO
-            use an on-screen turtle.</p>
-        </div>
-    </li>
-</ol>
+                <p class="details">LOGO was designed by Wally Feurzeig, Seymour Papert, and Cynthia Solomon. Early
+                    turtles were often robots that rolled on the floor and drew on paper, but now most versions of LOGO
+                    use an on-screen turtle.</p>
+            </div>
+        </li>
+        <li>
+            What short-range wireless technology that is often used to connect mobile phones to other devices is named
+            for a 10th century Danish king?
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Bluetooth</span></p>
+
+                <p class="details">Bluetooth unites phones, computers, speakers, and other devices the same way that
+                    King Harald Bluetooth united the various tribes of Denmark. At least that's what the people who came
+                    up with the name say.</p>
+            </div>
+        </li>
+        <li>
+            What number does the following Python code snippet print?
+
+            <pre><code class="language-python">
+tot = 0
+for n in [1,2,3,4,5]:
+    tot = tot + n
+print(tot)
+            </code></pre>
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">15</span></p>
+
+                <p class="details">The loop repeats five times, with the variable <code>n</code> taking the values 1, 2,
+                    3, 4, and 5. Each time the value of <code>n</code> is added to <code>tot</code>, which starts at 0.
+                    So in the end <code>tot</code> equals 0 + 1 + 2 + 3 + 4 + 5 which is 15.</p>
+            </div>
+        </li>
+    </ol>
+</div>
 </body>
 </html>
