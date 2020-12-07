@@ -61,6 +61,9 @@ ul.sm {
     .centerer {
         width: 80%;
     }
+    pre.centerer {
+        width: 100%;
+    }
     .trivia pre code {
         width: 90%;
     }
@@ -73,6 +76,9 @@ ul.sm {
     .centerer {
         width: 60%;
     }
+    pre.centerer {
+        width: 90%;
+    }
     .trivia pre code {
         width: 60%;
     }
@@ -84,6 +90,9 @@ ul.sm {
     }
     .centerer {
         width: 50%;
+    }
+    pre.centerer {
+        width: 90%;
     }
     .trivia pre code {
         width: 50%;
