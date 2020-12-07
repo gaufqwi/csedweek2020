@@ -59,9 +59,9 @@ let controls;                   // An object that represents the keyboard contro
 function preload () {
     //this.load.setBaseURL('');
 
-    this.load.image('ground', 'assets/PNG/Tiles/platformPack_tile001.png')
-    this.load.image('platform', 'assets/PNG/Tiles/platformPack_tile025.png')
-    this.load.image('tm', 'assets/PNG/Characters/platformChar_idle.png');
+    this.load.image('ground', 'assets/PNG/Tiles/tile001.png')
+    this.load.image('platform', 'assets/PNG/Tiles/tile025.png')
+    this.load.image('tm', 'assets/PNG/Characters/idle.png');
 }
 
 /**
