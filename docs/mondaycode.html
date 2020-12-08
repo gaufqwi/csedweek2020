@@ -17,6 +17,9 @@
  */
 
 const title = 'My Game';
+const tileSize = 64;
+const gridWidth = 12;
+const gridHeight = 9;
 
 /** Phaser configuration and setup
  *
@@ -27,8 +30,8 @@ const title = 'My Game';
 const config = {
     type: Phaser.AUTO,
     title: title,
-    width: 800,
-    height: 600,
+    width: tileSize*gridWidth,
+    height: tileSize*gridHeight,
     physics: {
         default: 'arcade'
     },
@@ -49,7 +52,9 @@ let game = new Phaser.Game(config);
  * (Actually, it's usually a bad idea to use global variables and there are other ways to organize our
  * code that are probably better, but for small and fairly simple games using globals is easier.)
  */
-
+let tm;
+let platforms;
+let controls;
 
 /** Main Phaser functions
  *
@@ -62,6 +67,8 @@ let game = new Phaser.Game(config);
  */
 function preload () {
     this.load.setBaseURL('https://gaufqwi.github.io/csedweek2020/');
+    this.load.image('tm', 'assets/PNG/Characters/idle.png');
+    this.load.image('ground', 'assets/PNG/Tiles/tile001.png');
 
 }
 
@@ -71,21 +78,24 @@ function preload () {
  * or number of lives remaining).
  */
 function create () {
+    tm = this.physics.add.sprite(100, 100, 'tm');
+    tm.setDisplaySize(64, 64);
+    tm.refreshBody();
+    tm.setCollideWorldBounds(true);
 
+    platforms = this.physics.add.staticGroup();
+    //platforms.create(32, 8*64+32, 'ground');
+    //platforms.create(32 + 64, 8*64+32, 'ground');
+    for (let i = 0; i < gridWidth; i++) {
+        platforms.create(32 + i*64, 8*64+32, 'ground');
+    }
+
+    this.physics.add.collider(tm, platforms);
+    this.physics.world.gravity.y = 200;
+
+    controls = this.input.keyboard.createCursorKeys();
 }
-
-/**
- * This function is the game's "main loop". It runs many times a second and is responsible for
- * waiting for user input and responding in ways that reflect the game rules.
- */
-function update () {
-
-}
-
-/** Helper functions
- *
- * Extra functions to make our code easier to write and understand
- */</code></pre>
+</code></pre>
 
 </body>
 </html>

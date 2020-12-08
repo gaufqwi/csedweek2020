@@ -2,6 +2,11 @@ html {
     font-family: Verdana, Geneva, sans-serif;
 }
 
+.emoji {
+    height: 1em;
+    width: 1em;
+}
+
 .label {
     font-weight: bold;
 }
@@ -80,7 +85,7 @@ ul.sm {
         width: 90%;
     }
     .trivia pre code {
-        width: 60%;
+        width: 70%;
     }
 }
 
@@ -95,7 +100,7 @@ ul.sm {
         width: 90%;
     }
     .trivia pre code {
-        width: 50%;
+        width: 60%;
     }
 }
 

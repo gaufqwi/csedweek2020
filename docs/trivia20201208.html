@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Science Trivia for Monday</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/monokai.css">
+    <script src="js/spoiler.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        document.addEventListener("DOMContentLoaded", () => {
+            spoilerAlert('.spoiler', {max: 13, partial: 11, hintText: 'Click to reveal'});
+        });
+    </script>
+</head>
+<body class="trivia">
+<div class="centerer">
+    <h1>Tuesday Trivia</h1>
+    <p>Give these trivia questions a try. Click the blurry text to see the answers.</p>
+    <ol>
+        <li>
+            What 19th century woman is often considered to be the world's first computer programmer? She wrote a
+            program to calculate a mathematical sequence called the Bernoulli numbers.
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Ada Lovelace</span></p>
+
+                <p class="details">The mechanical computer that Ada's program was intended to run on, Charles Babbage's
+                    Analytical engine, was never built, so she never got a chance to test her program. Still, she
+                    deserves major credit for her insights on how computers could be used as general purpose problem
+                    solving machines, not just calculators for arithmetic.</p>
+            </div>
+        </li>
+        <li>
+            What computer language invented by Guido van Rossum was named for a British comedy troupe?
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Python</span></p>
+
+                <p class="details">The comedy troupe was Monty Python, who had a TV program and made several movies.
+                    Today Python is one of the most popular computer languages around the world. It was
+                    designed to be easy to learn yet still powerful.</p>
+            </div>
+        </li>
+        <li>
+            What line of inexpensive, credit card sized computers popular with hobbyists is named for a fruit and
+            a mathematical constant?
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Raspberry Pi</span></p>
+
+                <p class="details">Raspberry Pi computers aren't just for fun. In Brazil they are being used to
+                run ventilators used by COVID patients.</p>
+            </div>
+        </li>
+        <li>
+            What string does the Javascript code below print?
+
+            <pre><code class="language-javascript">
+let fruits = ['apple', 'banana', 'grape', 'orange', 'pear'];
+console.log(fruits[3]);
+            </code></pre>
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer"><code>'orange'</code></span></p>
+
+                <p class="details">In Javascript, as in many computer languages, arrays are 0-based. That means that the
+                    first item has an index of 0, not 1. Thus in the given code <code>fruit[0]</code> is
+                    <code>'apple'</code>, <code>fruit[1]</code> is <code>'banana'</code>, <code>fruit[2]</code> is
+                    <code>'grape'</code>, and <code>fruit[3]</code> is <code>'orange'</code>.</p>
+            </div>
+        </li>
+    </ol>
+</div>
+</body>
+</html>
