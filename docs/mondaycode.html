@@ -30,8 +30,8 @@ const gridHeight = 9;
 const config = {
     type: Phaser.AUTO,
     title: title,
-    width: tileSize*gridWidth,
-    height: tileSize*gridHeight,
+    width: gridWidth * tileSize,
+    height: gridHeight * tileSize,
     physics: {
         default: 'arcade'
     },
@@ -54,7 +54,6 @@ let game = new Phaser.Game(config);
  */
 let tm;
 let platforms;
-let controls;
 
 /** Main Phaser functions
  *
@@ -79,22 +78,32 @@ function preload () {
  */
 function create () {
     tm = this.physics.add.sprite(100, 100, 'tm');
+    tm.setCollideWorldBounds(true);
     tm.setDisplaySize(64, 64);
     tm.refreshBody();
-    tm.setCollideWorldBounds(true);
 
     platforms = this.physics.add.staticGroup();
-    //platforms.create(32, 8*64+32, 'ground');
-    //platforms.create(32 + 64, 8*64+32, 'ground');
+    //platforms.create(32, 8*64 + 32, 'ground');
+    //platforms.create(32 + 1*64, 8*64 + 32, 'ground');
     for (let i = 0; i < gridWidth; i++) {
-        platforms.create(32 + i*64, 8*64+32, 'ground');
+        platforms.create(32 + i*64, 8*64 + 32, 'ground');
     }
 
     this.physics.add.collider(tm, platforms);
     this.physics.world.gravity.y = 200;
-
-    controls = this.input.keyboard.createCursorKeys();
 }
+
+/**
+ * This function is the game's "main loop". It runs many times a second and is responsible for
+ * waiting for user input and responding in ways that reflect the game rules.
+ */
+function update () {
+}
+
+/** Helper functions
+ *
+ * Extra functions to make our code easier to write and understand
+ */
 </code></pre>
 
 </body>
