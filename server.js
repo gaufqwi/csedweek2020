@@ -4,7 +4,7 @@ const path = require('path');
 const port = 7777;
 const app = express();
 
-const rootdir = process.argv[2] || 'monday';
+const rootdir = process.argv[2] || 'tuesday';
 const rootpath = path.join(__dirname, rootdir);
 const phaser = path.join(__dirname, 'node_modules/phaser/dist/phaser.js');
 

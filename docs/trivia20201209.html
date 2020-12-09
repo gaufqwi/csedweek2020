@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Science Trivia for Monday</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/monokai.css">
+    <script src="js/spoiler.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        document.addEventListener("DOMContentLoaded", () => {
+            spoilerAlert('.spoiler', {max: 13, partial: 11, hintText: 'Click to reveal'});
+        });
+    </script>
+</head>
+<body class="trivia">
+<div class="centerer">
+    <h1>Wednesday Trivia</h1>
+    <p>Give these trivia questions a try. Click the blurry text to see the answers.</p>
+    <ol>
+        <li>
+            December 9 is the birthday of what pioneering computer scientist who served as a rear admiral in the
+            United States Navy? She was also instrumental in the creation of the COBOL programming language.
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Grace Hopper</span></p>
+
+                <p class="details">In 1947 Hopper and her team discovered a moth lodged in one of the components of the
+                    computer they were using, preventing it from working correctly. For that reason she is often
+                    credited with coining the word "debugging" to mean finding and fixing the errors in a computer system,
+                    though in all likelihood the word was in use before this incident.</p>
+            </div>
+        </li>
+        <li>
+            Lots of irritating single parentheses are a feature of what list processing language that inspired
+            both LOGO and Scheme?
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Lisp</span></p>
+
+                <p class="details">Layers and layers of nested parentheses are a distinctive feature of Lisp. Here is
+                typical example of Lisp code:</p>
+
+                <pre><code class="language-lisp">
+(defun factorial (n)
+    (if (= n 0) 1
+        (* n (factorial (- n 1)))))
+            </code></pre>
+            </div>
+        </li>
+        <li>
+            Computers can represent numbers several different ways. In the binary system numbers are represented using
+            powers of 2. Another system, hexadecimal, uses powers of what number?
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">16</span></p>
+
+                <p class="details">Hexadecimal needs 16 different digits, so 0 - 9 are used as usual and the letters A -
+                    F are used to represent the quantities 10 - 15. For example, the hexadecimal value 3C
+                    equals 60 since the 3 means three 16s and the C means twelve 1s, and 3 &times; 16 + 12 &times; 1 = 60.
+            </div>
+        </li>
+        <li>
+            The Cascading Style Sheet (CSS) code below will make a web page with what color background?
+
+            <pre><code class="language-css">
+body {
+    background-color: rgb(0, 0, 255);
+}
+            </code></pre>
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer"><code>blue</code></span></p>
+
+                <p class="details">The 'r', 'g', and 'b' in <code>rgb()</code> stand for red, green, and blue. <code>rgb(0,
+                    0, 255)</code> means a color that is all blue with no red or green. <code>rgb(255, 0, 255)</code>
+                    would be purple (actually pinkish purple) since that's what you get when you mix red and blue.</p>
+            </div>
+        </li>
+    </ol>
+    <div class="footer">Return to <a href="/csedweek2020/">main page</a>.</div>
+</div>
+
+</body>
+</html>

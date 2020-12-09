@@ -346,7 +346,21 @@ built_in:"array bigint binary bit blob bool boolean char character date dec deci
 className:"string",begin:'"',end:'"',contains:[{begin:'""'}]},{
 className:"string",begin:"`",end:"`"
 },e.C_NUMBER_MODE,e.C_BLOCK_COMMENT_MODE,t,e.HASH_COMMENT_MODE]
-},e.C_BLOCK_COMMENT_MODE,t,e.HASH_COMMENT_MODE]}}})());hljs.registerLanguage("java",(()=>{"use strict"
+},e.C_BLOCK_COMMENT_MODE,t,e.HASH_COMMENT_MODE]}}})());hljs.registerLanguage("lisp",(()=>{"use strict";return e=>{
+var n="[a-zA-Z_\\-+\\*\\/<=>&#][a-zA-Z0-9_\\-+*\\/<=>&#!]*",a="\\|[^]*?\\|",i="(-|\\+)?\\d+(\\.\\d+|\\/\\d+)?((d|e|f|l|s|D|E|F|L|S)(\\+|-)?\\d+)?",s={
+className:"literal",begin:"\\b(t{1}|nil)\\b"},l={className:"number",variants:[{
+begin:i,relevance:0},{begin:"#(b|B)[0-1]+(/[0-1]+)?"},{
+begin:"#(o|O)[0-7]+(/[0-7]+)?"},{begin:"#(x|X)[0-9a-fA-F]+(/[0-9a-fA-F]+)?"},{
+begin:"#(c|C)\\("+i+" +"+i,end:"\\)"}]},b=e.inherit(e.QUOTE_STRING_MODE,{
+illegal:null}),g=e.COMMENT(";","$",{relevance:0}),r={begin:"\\*",end:"\\*"},t={
+className:"symbol",begin:"[:&]"+n},c={begin:n,relevance:0},d={begin:a},o={
+contains:[l,b,r,t,{begin:"\\(",end:"\\)",contains:["self",s,b,l,c]},c],
+variants:[{begin:"['`]\\(",end:"\\)"},{begin:"\\(quote ",end:"\\)",keywords:{
+name:"quote"}},{begin:"'"+a}]},v={variants:[{begin:"'"+n},{
+begin:"#'"+n+"(::"+n+")*"}]},m={begin:"\\(\\s*",end:"\\)"},u={endsWithParent:!0,
+relevance:0};return m.contains=[{className:"name",variants:[{begin:n,relevance:0
+},{begin:a}]},u],u.contains=[o,v,m,s,l,b,g,r,t,d,c],{name:"Lisp",illegal:/\S/,
+contains:[l,e.SHEBANG(),s,b,g,o,v,m,c]}}})());hljs.registerLanguage("java",(()=>{"use strict"
 ;var e="\\.([0-9](_*[0-9])*)",n="[0-9a-fA-F](_*[0-9a-fA-F])*",a={
 className:"number",variants:[{
 begin:`(\\b([0-9](_*[0-9])*)((${e})|\\.)?|(${e}))[eE][+-]?([0-9](_*[0-9])*)[fFdD]?\\b`
