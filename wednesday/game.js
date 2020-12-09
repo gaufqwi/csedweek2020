@@ -1,14 +1,11 @@
-//var config = { width: 1000, height: 600 };
-//var game = new Phaser.Game(config);
-
 /** General configuration (if needed)
  *
  */
 
-const title = 'Platformer 1'
+const title = 'My Game';
 const tileSize = 64;
 const gridWidth = 12;
-const gridHeight = 8;
+const gridHeight = 9;
 
 /** Phaser configuration and setup
  *
@@ -41,11 +38,9 @@ let game = new Phaser.Game(config);
  * (Actually, it's usually a bad idea to use global variables and there are other ways to organize our
  * code that are probably better, but for small and fairly simple games using globals is easier.)
  */
-
-let tm;                     // The sprite representing the player
-let platforms;                  // All of the individual tiles that the player can stand on
-
-let controls;                   // An object that represents the keyboard controls
+let tm;
+let platforms;
+let controls;
 
 /** Main Phaser functions
  *
@@ -57,12 +52,12 @@ let controls;                   // An object that represents the keyboard contro
  * from the server.
  */
 function preload () {
-    //this.load.setBaseURL('');
-
-    this.load.image('ground', 'assets/PNG/Tiles/tile001.png')
-    this.load.image('platform', 'assets/PNG/Tiles/tile025.png')
+    this.load.setBaseURL('https://gaufqwi.github.io/csedweek2020/');
     //this.load.image('tm', 'assets/PNG/Characters/idle.png');
-    this.load.spritesheet('tm', 'assets/Tilesheet/character.png');
+    this.load.spritesheet('tm', 'assets/Tilesheet/character.png', {frameWidth: 96, frameHeight: 96});
+    this.load.image('ground', 'assets/PNG/Tiles/tile001.png');
+    this.load.image('bridge', 'assets/PNG/Tiles/tile039.png');
+
 }
 
 /**
@@ -71,26 +66,45 @@ function preload () {
  * or number of lives remaining).
  */
 function create () {
-    this.physics.world.gravity.y = 200;
-
-    platforms = this.physics.add.staticGroup();
-
-    // for (let i = 0; i < gridWidth; i++) {
-    //     platforms.create(32 + i * tileSize, 32 + 7 * tileSize, 'ground');
-    // }
-    makePlatform(7, 0, 11, 'ground');
-    makePlatform(4, 0, 3, 'platform');
-    makePlatform(2, 6, 11, 'platform');
-
-    tm = this.physics.add.sprite(32, 32 + 5 * tileSize, 'tm');
+    tm = this.physics.add.sprite(100, 100, 'tm');
+    tm.setCollideWorldBounds(true);
     tm.setDisplaySize(64, 64);
     tm.refreshBody();
-    //tm.setSize(64, 64);
 
-    controls = this.input.keyboard.createCursorKeys();
+    this.anims.create({
+        key: 'idle',
+        frames: [{key: 'tm', frame: 0}],
+        frameRate: 10
+    });
+    this.anims.create({
+        key: 'jump',
+        frames: [{key: 'tm', frame: 1}],
+        frameRate: 10,
+        repeat: -1
+    });
+    this.anims.create({
+        key: 'walk',
+        frames: [{key: 'tm', frame: 2}, {key: 'tm', frame: 3}],
+        frameRate: 6,
+        repeat: -1
+    });
+
+    platforms = this.physics.add.staticGroup();
+    //platforms.create(32, 8*64 + 32, 'ground');
+    //platforms.create(32 + 1*64, 8*64 + 32, 'ground');
+    // for (let i = 0; i < gridWidth; i++) {
+    //     platforms.create(32 + i*64, 8*64 + 32, 'ground');
+    // }
+    makePlatform('ground', 0, 12, 8);
+    makePlatform('bridge', 0, 3, 4);
+    makePlatform('bridge', 4, 4, 1);
+    makePlatform('bridge', 8, 4, 6);
+    makePlatform('bridge', 5, 2, 5);
 
     this.physics.add.collider(tm, platforms);
-    tm.setCollideWorldBounds(true);
+    this.physics.world.gravity.y = 200;
+
+    controls = this.input.keyboard.createCursorKeys();
 }
 
 /**
@@ -98,22 +112,35 @@ function create () {
  * waiting for user input and responding in ways that reflect the game rules.
  */
 function update () {
-    if (controls.left.isDown) {
-        tm.setVelocityX(-160);
-
-        //tm.anims.play('left', true);
-    } else if (controls.right.isDown) {
+    if (controls.right.isDown) {
         tm.setVelocityX(160);
-
-        //tm.anims.play('right', true);
+        tm.setFlipX(false);
+        tm.anims.play('walk', true);
+        // if (tm.body.touching.down) {
+        //     tm.anims.play('walk', true);
+        // }
+    } else if (controls.left.isDown) {
+        tm.setVelocityX(-160);
+        tm.setFlipX(true);
+        tm.anims.play('walk', true);
+        // if (tm.body.touching.down) {
+        //     tm.anims.play('walk', true);
+        // }
     } else {
         tm.setVelocityX(0);
-
-        //tm.anims.play('turn');
+        tm.anims.play('idle', true);
+        // if (tm.body.touching.down) {
+        //     tm.anims.play('idle', true);
+        // }
     }
 
     if (controls.up.isDown && tm.body.touching.down) {
-        tm.setVelocityY(-330);
+        tm.setVelocityY(-300);
+        //tm.anims.play('jump', true);
+    }
+
+    if (!tm.body.touching.down) {
+        tm.anims.play('jump', true);
     }
 }
 
@@ -121,8 +148,9 @@ function update () {
  *
  * Extra functions to make our code easier to write and understand
  */
-function makePlatform (y, startx, endx, terrain) {
-    for (let x = startx; x <= endx; x++) {
-        platforms.create(32 + x * tileSize, 32 + y * tileSize, terrain);
+
+function makePlatform (key, startx, length, y) {
+    for (let i = startx; i < startx + length; i++) {
+        platforms.create(32 + i*64, y*64 + 32, key);
     }
 }
