@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Science Trivia for Monday</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/monokai.css">
+    <script src="js/spoiler.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        document.addEventListener("DOMContentLoaded", () => {
+            spoilerAlert('.spoiler', {max: 13, partial: 11, hintText: 'Click to reveal'});
+        });
+    </script>
+</head>
+<body class="trivia">
+<div class="centerer">
+    <h1>Wednesday Trivia</h1>
+    <p>Give these trivia questions a try. Click the blurry text to see the answers.</p>
+    <ol>
+        <li>
+            What is the name of the Finnish-American computer scientist who created the open source Unix-like operating
+            system that is at the core of many web servers, mobile phones, and other devices? He shares his name with
+            both a Nobel prize-winning chemist and a blanket-carrying cartoon character.
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Linus Torvalds</span></p>
+
+                <p class="details">Torvalds started writing the Linux operating system in 1991 as a way to learn
+                about the Intel 386 computer chip. He also wrote the Git version control system that used by
+                developers all over the world.</p>
+            </div>
+        </li>
+        <li>
+            What language was introduced by Apple in 2014 as a replacement for Objective-C? If you want to write iOS
+            apps, you better hurry up and learn it.
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Swift</span></p>
+
+                <p class="details">Swift borrows features from lots of other programming languages such as C#,
+                Python, Ruby, and others. In 2015 it became open source, which means that anyone can see the code
+                and contribute to improving it.</p>
+            </div>
+
+        </li>
+        <li>
+            Many acronyms related to computer networking and the internet end with the letter P. Examples include
+            IP, TCP, DHCP, and HTTP. What word does the letter P stand for in each of these acronyms?
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">protocol</span></p>
+
+                <p class="details">A protocol is a common set of rules for interacting and communicating shared among
+                a group of people (or computers). These protocols ensure that computers "speak the same language"
+                when they exchange data over the network.</p>
+            </div>
+        </li>
+        <li>
+            In the complete C program shown below, which of the three functions would be the first (and in fact
+            only) to be called when the program is run?
+
+            <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+init() {
+   printf("Hello, World from init!");
+}
+
+start() {
+   printf("Hello, World from start!");
+}
+
+main() {
+   printf("Hello, World from main!");
+}
+            </code></pre>
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer"><code>main()</code></span></p>
+
+                <p class="details">C, developed by Dennis Ritchie in the early 1970s, is the most popular programming
+                language in the world. The <code>main()</code> function is the entry point for C programs.</p>
+            </div>
+        </li>
+    </ol>
+    <div class="footer">Return to <a href="/csedweek2020/">main page</a>.</div>
+</div>
+
+</body>
+</html>
