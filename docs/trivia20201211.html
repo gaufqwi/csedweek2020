@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Science Trivia for Monday</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/monokai.css">
+    <script src="js/spoiler.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        document.addEventListener("DOMContentLoaded", () => {
+            spoilerAlert('.spoiler', {max: 13, partial: 11, hintText: 'Click to reveal'});
+        });
+    </script>
+</head>
+<body class="trivia">
+<div class="centerer">
+    <h1>Friday Trivia</h1>
+    <p>Give these trivia questions a try. Click the blurry text to see the answers.</p>
+    <ol>
+        <li>
+            What Stanford computer scientist literally wrote the book on computer algorithms: the multi-volume work
+            in progress called <i>The Art of Computer Programming</i>? You might think the first letter of his last
+            name is silent, but it isn't.
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Donald Knuth</span></p>
+
+                <p class="details">Knuth also wrote the TeX typesetting system that is still widely used for
+                scientific and mathematical papers. If you find an error in one his books he will send you a
+                check for $2.56.</p>
+            </div>
+        </li>
+        <li>
+            What object-oriented computer language was developed by Sun Microsystems in the mid 1990s? It is named
+            for a beverage popular among programmers who work late into the night.
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">Java</span></p>
+
+                <p class="details">Java was designed to compile into "bytecode" rather than machine code. That means
+                that the same Java program can run on any computer - Mac, PC, Unix, etc. - without any changes.</p>
+            </div>
+
+        </li>
+        <li>
+            Bitcoin and other cryptocurrencies are based on a kind of database that stores data in an ordered
+            list of records on many, many computers spread all around the world. What is the two word name of
+            that type of database?
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">block chain</span></p>
+
+                <p class="details">The trick to making a block chain system work is getting everyone to agree on the
+                same data. Bitcoin does this by forcing anyone who wants to participate to solve a hard mathematical
+                problem. That makes it hard to cheat the system as long a majority of people are playing fair.</p>
+            </div>
+        </li>
+        <li>
+            What number will the following Swift program print out?
+
+            <pre><code class="language-swift">
+let numbers = [12, 5, 7, 15, 2, 9]
+var sum = 0
+
+for n in numbers {
+    if n < 10 {
+        sum = sum + n
+    }
+}
+print(sum)
+            </code></pre>
+
+            <div class="spoiler">
+                <p><span class="label">Answer:</span> <span class="answer">23</span></p>
+
+                <p class="details">The <code>for</code> loop repeats for each number in the list. Because
+                of the <code>if</code> statement, only the numbers less than 10 get added to <code>sum</code>. So
+                <code>sum</code> will equal 5 + 7 + 2 + 9, which is 23.</p>
+            </div>
+        </li>
+    </ol>
+    <div class="footer">Return to <a href="/csedweek2020/">main page</a>.</div>
+</div>
+
+</body>
+</html>
